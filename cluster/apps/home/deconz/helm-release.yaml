@@ -1,0 +1,50 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: deconz
+  namespace: home
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: deconz
+      version: 5.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: marthoc/deconz
+      tag: 2.12.01
+    env:
+      TZ: "Europe/Belgrade"
+      DECONZ_DEVICE: "/dev/ttyUSB0"
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+        hosts:
+          - host: "deconz.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "deconz.${SECRET_DOMAIN}"
+    securityContext:
+      privileged: true
+    persistence:
+      config:
+        enabled: true
+        existingClaim: deconz-config
+        mountPath: /root/.local/share/dresden-elektronik/deCONZ
+      usb:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE1964464-if00
+        mountPath: /dev/ttyUSB0

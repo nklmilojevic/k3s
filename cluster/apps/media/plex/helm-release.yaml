@@ -1,0 +1,77 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plex
+  namespace: media
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: plex
+      version: 5.3.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
+    image:
+      repository: ghcr.io/k8s-at-home/plex
+      tag: v1.23.2.4656-85f0adf5b
+    env:
+      TZ: "Europe/Belgrade"
+      ADVERTISE_IP: "http://${SVC_PLEX_IP}:32400/"
+      PLEX_PREFERENCE_1: "FriendlyName=netes"
+      PLEX_PREFERENCE_2: "EnableIPv6=0"
+    service:
+      main:
+        type: LoadBalancer
+        loadBalancerIP: "${SVC_PLEX_IP}"
+        ports:
+          http:
+            port: 32400
+        externalTrafficPolicy: Local
+        primary: true
+    externalTrafficPolicy: Local
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+        hosts:
+          - host: "plex.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "plex.${SECRET_DOMAIN}"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: plex-config
+      media:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 10.5.0.10
+            path: /mnt/user/Multimedia
+        mountPath: /multimedia
+        readOnly: true
+      transcode:
+        enabled: true
+        type: emptyDir
+        medium: Memory
+    resources:
+      requests:
+        gpu.intel.com/i915: 1
+        cpu: 200m
+        memory: 256Mi
+      limits:
+        gpu.intel.com/i915: 1
+        memory: 4096Mi

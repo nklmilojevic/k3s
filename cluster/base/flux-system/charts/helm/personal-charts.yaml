@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: personal-charts
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://nklmilojevic.github.io/helm-charts/
+  timeout: 2m
