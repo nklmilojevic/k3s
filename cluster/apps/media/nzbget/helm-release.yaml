@@ -50,3 +50,9 @@ spec:
             server: 10.5.0.10
             path: /mnt/user/Multimedia
         mountPath: /multimedia
+        mountOptions:
+          - rsize=8192
+          - wsize=8192
+          - hard
+          - tcp
+          - noatime
