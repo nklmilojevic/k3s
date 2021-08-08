@@ -55,14 +55,6 @@ spec:
       persistence:
         enabled: true
         existingClaim: hass-psql
-    influxdb:
-      enabled: true
-      architecture: standalone
-      database: home_assistant
-      authEnabled: false
-      persistence:
-        enabled: true
-        existingClaim: hass-influxdb
     podSecurityContext:
       supplementalGroups:
         - 100
