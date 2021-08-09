@@ -6,3 +6,4 @@ resources:
   - networking.yaml
   - media.yaml
   - home.yaml
+  - monitoring.yaml

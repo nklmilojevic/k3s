@@ -8,3 +8,4 @@ resources:
   - metallb-charts.yaml
   - personal-charts.yaml
   - pihole-chart.yaml
+  - prometheus-community.yaml
