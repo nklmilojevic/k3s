@@ -16,6 +16,10 @@ spec:
         name: jetstack-charts
         namespace: flux-system
   values:
+    prometheus:
+      enabled: true
+    servicemonitor:
+      enabled: true
     installCRDs: false
     webhook:
       enabled: true
