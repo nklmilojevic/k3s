@@ -37,7 +37,7 @@ spec:
               - "rtorrent.${SECRET_DOMAIN}"
     persistence:
       config:
-        enabled: false
+        enabled: true
         existingClaim: rtorrent-config
       media:
         enabled: true
