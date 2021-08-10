@@ -66,4 +66,3 @@ spec:
       system.umask.set = 0002
       network.http.max_open.set = 50
       network.http.dns_cache_timeout.set = 25
-      log.add_output = "info", "log"
