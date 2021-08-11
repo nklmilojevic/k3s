@@ -44,12 +44,7 @@ spec:
         existingClaim: sonarr-config
       media:
         enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: 10.5.0.10
-            path: /mnt/user/Multimedia
-        mountPath: /multimedia
+        existingClaim: nfs-media-pvc
     prometheus:
       podMonitor:
         enabled: true

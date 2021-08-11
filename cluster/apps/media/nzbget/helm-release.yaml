@@ -44,15 +44,4 @@ spec:
         existingClaim: nzbget-config
       media:
         enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: 10.5.0.10
-            path: /mnt/user/Multimedia
-        mountPath: /multimedia
-        mountOptions:
-          - rsize=8192
-          - wsize=8192
-          - hard
-          - tcp
-          - noatime
+        existingClaim: nfs-media-pvc
