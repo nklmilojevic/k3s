@@ -56,13 +56,14 @@ spec:
         existingClaim: plex-config
       media:
         enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: 10.5.0.10
-            path: /mnt/user/Multimedia
-        mountPath: /multimedia
-        readOnly: true
+        existingClaim: nfs-media-pvc
+        # type: custom
+        # volumeSpec:
+        #   nfs:
+        #     server: 10.5.0.10
+        #     path: /mnt/user/Multimedia
+        # mountPath: /multimedia
+        # readOnly: true
       transcode:
         enabled: true
         type: emptyDir
