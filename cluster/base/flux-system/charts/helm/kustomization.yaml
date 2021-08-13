@@ -9,3 +9,4 @@ resources:
   - personal-charts.yaml
   - pihole-chart.yaml
   - prometheus-community.yaml
+  - grafana-charts.yaml
