@@ -43,7 +43,7 @@ spec:
     extraPorts:
       syslog:
         name: tcp-syslog
-        containerport: 1514
+        containerPort: 1514
         protocol: TCP
         service:
           type: LoadBalancer
