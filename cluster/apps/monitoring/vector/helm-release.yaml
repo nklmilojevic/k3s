@@ -10,7 +10,6 @@ spec:
     spec:
       # renovate: registryUrl=https://packages.timber.io/helm/latest
       chart: timberio/vector-agent
-      version: 0.15.2
       sourceRef:
         kind: HelmRepository
         name: vector-chart
