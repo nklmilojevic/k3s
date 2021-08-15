@@ -22,6 +22,23 @@ spec:
       tag: v4.3.5
     env:
       TZ: "Europe/Belgrade"
+    service:
+      main:
+        ports:
+          http:
+            port: 8080
+      bittorrent:
+        enabled: true
+        type: LoadBalancer
+        externalIPs:
+          - ${SVC_QBIT_IP}
+        externalTrafficPolicy: Local
+        ports:
+          bittorrent:
+            enabled: true
+            port: 6881
+            protocol: TCP
+            targetPort: 6881
     ingress:
       main:
         enabled: true
