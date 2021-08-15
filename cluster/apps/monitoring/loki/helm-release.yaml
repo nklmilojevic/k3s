@@ -9,8 +9,8 @@ spec:
   chart:
     spec:
       # renovate: registryUrl=https://grafana.github.io/helm-charts
-      chart: loki-stack
-      version: 2.4.1
+      chart: loki
+      version: 2.6.0
       sourceRef:
         kind: HelmRepository
         name: grafana-charts
@@ -20,26 +20,6 @@ spec:
     image:
       repository: grafana/loki
       version: 2.3.0
-    promtail:
-      extraScrapeConfigs:
-        - job_name: syslog
-          syslog:
-            listen_address: 0.0.0.0:514
-            labels:
-              job: syslog
-      extraPorts:
-        syslog:
-          name: tcp-syslog
-          containerPort: 1514
-          protocol: TCP
-          service:
-            type: LoadBalancer
-            port: 1514
-            externalIPs:
-              - ${SVC_LOKI_IP}
-            externalTrafficPolicy: Local
-      syslogService:
-        enabled: true
     limits_config:
       ingestion_rate_mb: 100
     serviceMonitor:
