@@ -10,3 +10,4 @@ resources:
   - pihole-chart.yaml
   - prometheus-community.yaml
   - grafana-charts.yaml
+  - vector-chart.yaml
