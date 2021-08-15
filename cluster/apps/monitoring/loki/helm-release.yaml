@@ -9,8 +9,8 @@ spec:
   chart:
     spec:
       # renovate: registryUrl=https://grafana.github.io/helm-charts
-      chart: loki
-      version: 2.6.0
+      chart: loki-stack
+      version: 2.4.1
       sourceRef:
         kind: HelmRepository
         name: grafana-charts
@@ -19,16 +19,7 @@ spec:
   values:
     image:
       repository: grafana/loki
-      version: k58-1ec0a31
-    config:
-      storage_config:
-        filesystem:
-          directory: /data/loki/chunks
-        boltdb_shipper:
-          active_index_directory: /data/loki/index
-          cache_location: /data/loki/index_cache
-          resync_interval: 5s
-          shared_store: s3
+      version: 2.3.0
     serviceMonitor:
       enabled: true
     persistence:
