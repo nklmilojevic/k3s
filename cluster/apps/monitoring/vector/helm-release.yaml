@@ -30,7 +30,7 @@ spec:
       sources:
         syslog:
           type: syslog
-          mode: UDP
+          mode: udp
           address: 0.0.0.0:1514
       sinks:
         loki:
