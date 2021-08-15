@@ -20,6 +20,8 @@ spec:
     image:
       repository: grafana/loki
       version: 2.3.0
+    limits_config:
+      ingestion_rate_mb: 100
     serviceMonitor:
       enabled: true
     persistence:
