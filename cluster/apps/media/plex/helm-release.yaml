@@ -25,6 +25,7 @@ spec:
     env:
       TZ: "Europe/Belgrade"
       ADVERTISE_IP: "http://${SVC_PLEX_IP}:32400/"
+      VERSION: "docker"
       PLEX_PREFERENCE_1: "FriendlyName=netes"
       PLEX_PREFERENCE_2: "EnableIPv6=0"
     service:
