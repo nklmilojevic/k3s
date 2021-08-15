@@ -27,6 +27,17 @@ spec:
             listen_address: 0.0.0.0:514
             labels:
               job: syslog
+      extraPorts:
+        syslog:
+          name: tcp-syslog
+          containerPort: 1514
+          protocol: TCP
+          service:
+            type: LoadBalancer
+            port: 1514
+            externalIPs:
+              - ${SVC_LOKI_IP}
+            externalTrafficPolicy: Local
       syslogService:
         enabled: true
     limits_config:
