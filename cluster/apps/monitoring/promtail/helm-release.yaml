@@ -48,5 +48,4 @@ spec:
         service:
           type: LoadBalancer
           externalTrafficPolicy: Local
-          externalIPs:
-            - ${SVC_LOKI_IP}
+          loadBalancerIP: ${SVC_LOKI_IP}
