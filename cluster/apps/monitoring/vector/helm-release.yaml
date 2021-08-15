@@ -41,4 +41,4 @@ spec:
             codec: "json"
             timestamp_format: "rfc3339"
           healthcheck:
-            enabled: "true"
+            enabled: true
