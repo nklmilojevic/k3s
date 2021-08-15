@@ -27,7 +27,7 @@ spec:
           protocol: UDP
           targetPort: 1514
     customConfig:
-      source:
+      sources:
         syslog:
           type: syslog
           mode: UDP
