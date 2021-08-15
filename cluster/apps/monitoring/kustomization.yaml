@@ -4,4 +4,4 @@ resources:
   - prometheus
   - exporters
   - loki
-  - promtail
+  # - promtail
