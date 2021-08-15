@@ -37,8 +37,10 @@ spec:
           type: loki
           inputs: ["syslog"]
           endpoint: "http://loki:3100"
+          labels:
+            "*": vector
           encoding:
-            codec: "json"
-            timestamp_format: "rfc3339"
+            codec: json
+            timestamp_format: rfc3339
           healthcheck:
             enabled: true
