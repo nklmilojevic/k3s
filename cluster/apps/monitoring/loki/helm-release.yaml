@@ -20,6 +20,15 @@ spec:
     image:
       repository: grafana/loki
       version: 2.3.0
+    promtail:
+      extraScrapeConfigs:
+        - job_name: syslog
+          syslog:
+            listen_address: 0.0.0.0:514
+            labels:
+              job: syslog
+      syslogService:
+        enabled: true
     limits_config:
       ingestion_rate_mb: 100
     serviceMonitor:
