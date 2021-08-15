@@ -21,6 +21,7 @@ spec:
       enabled: true
       type: LoadBalancer
       loadBalancerIP: ${SVC_LOKI_IP}
+      externalTrafficPolicy: Local
       ports:
         - name: syslog
           port: 1514
