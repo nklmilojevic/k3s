@@ -79,10 +79,9 @@
       "matchUpdateTypes": ["patch"],
       "labels": ["renovate/helm", "dep/patch"]
     },
-        // version strategies
-    {
+    /* {
       "matchDatasources": ["docker"],
       "versioning": "loose"
-    },
+    }, */
   ]
 }
