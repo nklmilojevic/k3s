@@ -43,6 +43,7 @@
     // global docker datasource settings
     {
       "matchDatasources": ["docker"],
+      "versioning": "loose",
       "enabled": true,
       "commitMessageTopic": "container image {{depName}}",
       "commitMessageExtra": "to {{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{{newValue}}}{{/if}}",
