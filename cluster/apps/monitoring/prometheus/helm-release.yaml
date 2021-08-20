@@ -23,13 +23,13 @@ spec:
         serviceMonitorSelectorNilUsesHelmValues: false
         probeSelectorNilUsesHelmValues: false
         retention: 2d
-      storage:
-        volumeClaimTemplate:
-          spec:
-            storageClassName: "local-path"
-            resources:
-              requests:
-                storage: 10Gi
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: "local-path"
+              resources:
+                requests:
+                  storage: 10Gi
       additionalServiceMonitors:
         - name: "cluster-monitor"
           namespaceSelector:
