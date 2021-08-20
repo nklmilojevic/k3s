@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: marthoc/deconz
-      tag: 2.12.05
+      tag: 2.12.06
     env:
       TZ: "Europe/Belgrade"
       DECONZ_DEVICE: "/dev/ttyUSB0"
