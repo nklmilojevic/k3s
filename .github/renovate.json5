@@ -79,9 +79,12 @@
       "matchUpdateTypes": ["patch"],
       "labels": ["renovate/helm", "dep/patch"]
     },
-    /* {
+    {
       "matchDatasources": ["docker"],
-      "versioning": "loose"
-    }, */
+      "versioning": "loose",
+      "matchPackageNames": [
+        "linuxserver/plex",
+      ]
+    },
   ]
 }
