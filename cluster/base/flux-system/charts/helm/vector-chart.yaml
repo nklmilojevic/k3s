@@ -5,6 +5,6 @@ metadata:
   name: vector-chart
   namespace: flux-system
 spec:
-  interval: 2m
+  interval: 30m
   url: https://packages.timber.io/helm/latest
   timeout: 2m
