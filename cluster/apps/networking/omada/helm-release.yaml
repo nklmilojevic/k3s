@@ -28,6 +28,8 @@ spec:
         annotations:
           kubernetes.io/ingress.class: "nginx"
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+          nginx.ingress.kubernetes.io/upstream-vhost: "omada.${SECRET_DOMAIN}:8043"
+          nginx.ingress.kubernetes.io/app-root: /login
         hosts:
           - host: "omada.${SECRET_DOMAIN}"
             paths:
