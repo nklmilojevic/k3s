@@ -27,7 +27,7 @@ spec:
         enabled: true
         annotations:
           kubernetes.io/ingress.class: "nginx"
-          # nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         hosts:
           - host: "omada.${SECRET_DOMAIN}"
             paths:
@@ -42,8 +42,7 @@ spec:
         loadBalancerIP: "${SVC_OMADA_IP}"
         ports:
           http:
-            port: 8088
-        externalTrafficPolicy: Local
+            port: 8043
         primary: true
     podSecurityContext:
       supplementalGroups:
