@@ -21,7 +21,7 @@ spec:
     dnsPolicy: ClusterFirstWithHostNet
     image:
       repository: linuxserver/plex
-      tag: 1.24.1.4931-1a38e63c6-ls71
+      tag: 168
     env:
       TZ: "Europe/Belgrade"
       ADVERTISE_IP: "http://${SVC_PLEX_IP}:32400/"
