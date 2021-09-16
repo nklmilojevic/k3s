@@ -83,7 +83,7 @@
       "matchDatasources": ["docker"],
       "versioning": "loose",
       "matchPackageNames": [
-        "linuxserver/plex",
+        "plexinc/pms-docker",
       ]
     },
   ]
