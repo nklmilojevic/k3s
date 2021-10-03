@@ -84,6 +84,7 @@
       "versioning": "loose",
       "matchPackageNames": [
         "plexinc/pms-docker",
+        "linuxserver/nzbget",
       ]
     },
   ]
