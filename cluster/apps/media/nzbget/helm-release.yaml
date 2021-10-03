@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: linuxserver/nzbget
-      tag: v21.1-ls96
+      tag: v21.1-r2311-ls9
     env:
       TZ: "Europe/Belgrade"
     ingress:
