@@ -30,3 +30,13 @@ spec:
             targetPort: 53
         externalTrafficPolicy: Local
         primary: true
+    persistence:
+      config:
+        enabled: true
+        type: custom
+        volumeSpec:
+          configMap:
+            name: unbound-config
+        subPath:
+          - path: unbound.conf
+            mountPath: "/etc/unbound/unbound.conf"
