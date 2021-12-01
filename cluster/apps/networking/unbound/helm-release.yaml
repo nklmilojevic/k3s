@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
   values:
     image:
-      repository: nklmilojevic/unbound
-      tag: v1.13.2
+      repository: selfhostingtools/unbound
+      tag: latest
     service:
       main:
         type: LoadBalancer
