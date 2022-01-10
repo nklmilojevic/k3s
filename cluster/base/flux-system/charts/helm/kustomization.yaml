@@ -11,3 +11,4 @@ resources:
   - prometheus-community.yaml
   - grafana-charts.yaml
   - vector-chart.yaml
+  - gitea-charts.yaml
