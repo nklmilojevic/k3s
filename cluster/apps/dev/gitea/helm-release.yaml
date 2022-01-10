@@ -25,7 +25,6 @@ spec:
         type: ClusterIP
         port: 22
         clusterIP: none
-        externalIPs: 10.5.0.229
     ingress:
       enabled: true
       annotations:
