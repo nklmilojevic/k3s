@@ -24,7 +24,6 @@ spec:
       ssh:
         type: ClusterIP
         port: 22
-        clusterIP: none
     ingress:
       enabled: true
       annotations:
