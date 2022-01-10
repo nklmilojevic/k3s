@@ -7,3 +7,4 @@ resources:
   - media.yaml
   - home.yaml
   - monitoring.yaml
+  - dev.yaml
