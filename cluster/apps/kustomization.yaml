@@ -7,4 +7,4 @@ resources:
   - system-upgrade
   - home
   - monitoring
-  # - dev
+  - dev
