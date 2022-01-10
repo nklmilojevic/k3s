@@ -6,5 +6,6 @@ metadata:
 spec:
   type: discord
   channel: fluxcd
+  username: FluxCD
   secretRef:
     name: discord-url
