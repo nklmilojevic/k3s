@@ -21,7 +21,7 @@ spec:
     dnsPolicy: ClusterFirstWithHostNet
     image:
       repository: plexinc/pms-docker
-      tag: 1.25.8.5663-e071c3d62
+      tag: 1.25.9.5721-965587f64
     env:
       TZ: "Europe/Belgrade"
       ADVERTISE_IP: "http://${SVC_PLEX_IP}:32400/"
