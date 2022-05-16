@@ -28,10 +28,9 @@ spec:
       main:
         enabled: true
         annotations:
-          nginx.ingress.kubernetes.io/auth-tls-pass-certificate-to-upstream: "true"
           kubernetes.io/ingress.class: "nginx"
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-          nginx.ingress.kubernetes.io/upstream-vhost: "omada.${SECRET_DOMAIN}:8043"
+          #nginx.ingress.kubernetes.io/upstream-vhost: "omada.${SECRET_DOMAIN}:8043"
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_redirect ~https://(.+):8043/(.+)/login$ https://$http_host/$2/login;
         hosts:
