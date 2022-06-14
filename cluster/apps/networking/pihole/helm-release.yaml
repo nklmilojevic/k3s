@@ -41,6 +41,8 @@ spec:
         port: 443
       type: ClusterIP
       externalTrafficPolicy: Local
+    ftl:
+      BLOCK_ICLOUD_PR: false
     ingress:
       enabled: true
       annotations:
