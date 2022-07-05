@@ -27,7 +27,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: nfs-camera-pvc
   namespace: home
-  spec:
+spec:
   accessModes:
     - ReadWriteMany
   storageClassName: camera
