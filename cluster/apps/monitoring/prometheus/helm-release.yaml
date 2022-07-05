@@ -43,6 +43,7 @@ spec:
     alertmanager:
       enabled: false
     grafana:
+      adminPassword: prom-operator
       grafanaSpec:
         replicas: 1
       ingress:
