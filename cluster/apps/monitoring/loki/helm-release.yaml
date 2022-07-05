@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://grafana.github.io/helm-charts
       chart: loki
-      version: 2.12.0
+      version: 2.12.2
       sourceRef:
         kind: HelmRepository
         name: grafana-charts
@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: grafana/loki
-      version: 2.3.0
+      version: 2.5.0
     limits_config:
       ingestion_rate_mb: 100
     serviceMonitor:
