@@ -62,3 +62,6 @@ spec:
       config:
         enabled: true
         existingClaim: hass-config
+      media:
+        enabled: true
+        existingClaim: nfs-camera-pvc
