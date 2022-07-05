@@ -47,15 +47,6 @@ spec:
         tls:
           - hosts:
               - "hass.${SECRET_DOMAIN}"
-    # postgresql:
-    #   enabled: true
-    #   postgresqlUsername: home-assistant
-    #   postgresqlPassword: home-assistant-pass
-    #   postgresqlDatabase: home-assistant
-
-      persistence:
-        enabled: true
-        existingClaim: hass-psql
     podSecurityContext:
       supplementalGroups:
         - 100
