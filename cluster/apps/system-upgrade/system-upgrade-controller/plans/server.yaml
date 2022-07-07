@@ -11,10 +11,10 @@ spec:
   cordon: true
   nodeSelector:
     matchExpressions:
-      - key: node-role.kubernetes.io/master
-        operator: In
-        values:
-          - "true"
+      - {key: k3s-upgrade, operator: Exists}
+      - {key: k3s-upgrade, operator: NotIn, values: ["disabled", "false"]}
+      - {key: k3os.io/mode, operator: DoesNotExist}
+      - {key: node-role.kubernetes.io/control-plane, operator: Exists}
   tolerations:
     - key: "node-role.kubernetes.io/master"
       operator: "Exists"

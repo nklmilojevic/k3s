@@ -12,10 +12,10 @@ spec:
   channel: https://update.k3s.io/v1-release/channels/v1.22
   nodeSelector:
     matchExpressions:
-      - key: node-role.kubernetes.io/master
-        operator: NotIn
-        values:
-          - "true"
+      - {key: k3s-upgrade, operator: Exists}
+      - {key: k3s-upgrade, operator: NotIn, values: ["disabled", "false"]}
+      - {key: k3os.io/mode, operator: DoesNotExist}
+      - {key: node-role.kubernetes.io/control-plane, operator: DoesNotExist}
   prepare:
     image: rancher/k3s-upgrade
     args:
