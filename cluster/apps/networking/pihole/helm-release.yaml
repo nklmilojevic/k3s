@@ -22,7 +22,7 @@ spec:
     virtualHost: pihole.milojevic.me
     image:
       repository: pihole/pihole
-      tag: 2022.04.3
+      tag: 2022.07.1
     serviceDns:
       type: LoadBalancer
       port: 53
