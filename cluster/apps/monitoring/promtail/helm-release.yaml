@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: grafana/promtail
-      version: 2.5.0
+      version: 2.6.1
     serviceMonitor:
       enabled: true
     config:
